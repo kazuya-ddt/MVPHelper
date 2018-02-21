@@ -1,7 +1,9 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'kotlin-android'
 //apply plugin: 'com.novoda.bintray-release'
 apply plugin: 'kotlin-kapt'
+
 
 android {
     compileSdkVersion 27
@@ -69,3 +71,5 @@ repositories {
     mavenCentral()
     maven { url "https://maven.google.com" }
 }
+
+//apply plugin: 'android-maven'
