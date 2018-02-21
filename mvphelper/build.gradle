@@ -1,14 +1,15 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'com.novoda.bintray-release'
+//apply plugin: 'com.novoda.bintray-release'
+apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
 
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 25
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
     }
@@ -25,29 +26,32 @@ android {
     }
 }
 
-publish {
-    groupId = 'com.github.stfalcon'
-    artifactId = 'mvphelper'
-    publishVersion = '0.2.1'
-    desc = 'Library that helps build MVP architecture based on Dagger2 and Rx using Kotlin or Java'
-    licences = ['Apache-2.0']
-    uploadName='MVPHelper'
-    website = 'https://github.com/stfalcon-studio/MVPHelper'
-}
+//publish {
+//    groupId = 'com.github.stfalcon'
+//    artifactId = 'mvphelper'
+//    publishVersion = '0.2.1'
+//    desc = 'Library that helps build MVP architecture based on Dagger2 and Rx using Kotlin or Java'
+//    licences = ['Apache-2.0']
+//    uploadName='MVPHelper'
+//    website = 'https://github.com/stfalcon-studio/MVPHelper'
+//}
 
 ext {
-    support_libraries_version = '25.3.1'
-    dagger_version = '2.10'
-    rxjava_version = '2.0.8'
+    support_libraries_version = '27.0.2'
+    dagger_version = '2.11'
+    rxjava_version = '2.1.8'
 }
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
     //Android Support
     compile "com.android.support:appcompat-v7:$support_libraries_version"
+    compile "com.android.support:support-v4:$support_libraries_version"
+    compile "com.android.support:support-media-compat:$support_libraries_version"
+
 
     //Kotlin
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     //Dagger
     compile "com.google.dagger:dagger:$dagger_version"
@@ -63,4 +67,5 @@ dependencies {
 
 repositories {
     mavenCentral()
+    maven { url "https://maven.google.com" }
 }

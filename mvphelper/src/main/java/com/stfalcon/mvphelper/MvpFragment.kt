@@ -29,8 +29,8 @@ abstract class MvpFragment<PRESENTER : IPresenter<VIEW>, in VIEW> : DaggerFragme
         firstStart = true
     }
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater?.inflate(getLayoutResId(), null)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        return inflater.inflate(getLayoutResId(), container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
