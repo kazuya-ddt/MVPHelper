@@ -40,7 +40,7 @@ android {
 
 ext {
     support_libraries_version = '27.0.2'
-    dagger_version = '2.11'
+    dagger_version = '2.10'
     rxjava_version = '2.1.8'
 }
 dependencies {
